@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-:root {
+:root [data-theme='dark'] {
   --ff-main: 'Nunito Sans';
 
   --color-primary-background: hsl(207, 26%, 17%);
   --color-text: hsl(0, 0%, 100%);
   --color-accent: hsl(209, 23%, 22%);
+  transition: all 100ms;
 }
 
-.light {
+:root [data-theme='light'] {
   --color-background: hsl(0, 0%, 98%);
   --color-text: hsl(200, 15%, 8%);
   --color-accent: hsl(0, 0%, 100%);
-  --color-input: hsl(0, 0%, 52%);
+  transition: all 100ms;
 }
 
 *,
@@ -29,4 +30,13 @@ html {
   font-size: 62.5%;
   line-height: 1.7;
   color: var(--color-text);
+}
+
+body {
+  background-color: var(--color-primary-background);
+}
+
+* > * {
+  background-color: inherit;
+  color: inherit;
 }
