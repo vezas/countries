@@ -8,9 +8,11 @@
   --box-shadow-color: 0, 0, 0;
   --box-shadow-primary: 0 0 1rem rgba(var(--box-shadow-color), 0.5);
 
-  --outline: 1px solid unquote('hsl(var(--color-text)/0.1)');
   --page-elements-gap: 3rem;
   --page-padding: 5rem;
+
+  --card-elements-gap: 2rem;
+  --card-padding: 2rem;
 }
 
 :root [data-theme='dark'] {

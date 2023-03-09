@@ -1,0 +1,9 @@
+.cardWrapper {
+  background-color: unquote('hsl(var(--color-accent))');
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-elements-gap);
+  padding-bottom: var(--card-elements-gap);
+  height: 40rem;
+}

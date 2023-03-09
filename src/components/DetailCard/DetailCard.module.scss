@@ -1,0 +1,26 @@
+.flag {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+}
+
+.name {
+  padding-inline: var(--card-padding);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.detailGroup {
+  padding-inline: var(--card-padding);
+  font-size: 1.5rem;
+
+  .detailHeader {
+    font-weight: 600;
+  }
+
+  .detailInfo {
+    font-weight: 300;
+  }
+}
