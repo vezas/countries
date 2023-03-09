@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-:root [data-theme='dark'] {
+:root {
   --ff-main: 'Nunito Sans';
 
-  --color-primary-background: hsl(207, 26%, 17%);
-  --color-text: hsl(0, 0%, 100%);
-  --color-accent: hsl(209, 23%, 22%);
+  --border-radius: 5px;
+
+  --box-shadow-color: 0, 0, 0;
+  --box-shadow-primary: 0 0 1rem rgba(var(--box-shadow-color), 0.5);
+
+  --outline: 1px solid unquote('hsl(var(--color-text)/0.1)');
+  --page-elements-gap: 3rem;
+  --page-padding: 5rem;
+}
+
+:root [data-theme='dark'] {
+  --color-background: 207 26% 17%;
+  --color-text: 0 0% 100%;
+  --color-accent: 209 23% 22%;
   transition: all 100ms;
 }
 
 :root [data-theme='light'] {
-  --color-background: hsl(0, 0%, 98%);
-  --color-text: hsl(200, 15%, 8%);
-  --color-accent: hsl(0, 0%, 100%);
+  --color-background: 0 0% 98%;
+  --color-text: 200 15% 8%;
+  --color-accent: 0 0% 100%;
+  --color-input: 0 0% 52%;
   transition: all 100ms;
 }
 
@@ -29,14 +41,24 @@ html {
   font-family: var(--ff-main), sans-serif;
   font-size: 62.5%;
   line-height: 1.7;
-  color: var(--color-text);
 }
 
 body {
-  background-color: var(--color-primary-background);
+  background-color: unquote('hsl(var(--color-background))');
+  color: unquote('hsl(var(--color-text))');
+  min-height: 100vh;
 }
 
-* > * {
-  background-color: inherit;
-  color: inherit;
+#root {
+  display: grid;
+  grid-template-rows: repeat(2, min-content) 1fr;
+  gap: var(--page-elements-gap);
+  min-height: 100%;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
 }

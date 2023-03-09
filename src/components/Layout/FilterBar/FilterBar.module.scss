@@ -1,0 +1,95 @@
+@import 'scss/_mixins.scss';
+
+.filterBar {
+  padding-inline: calc(var(--page-padding) * 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--page-elements-gap);
+
+  @include bp-tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .searchForm {
+    max-width: 30rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .searchBtn {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      display: grid;
+      z-index: 1;
+      place-items: center;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 50%;
+      background-color: transparent;
+      border: none;
+      color: var(--text-color);
+
+      .searchIcon {
+        width: 80%;
+        height: 80%;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .searchInput {
+      width: 100%;
+      padding: 1rem;
+      padding-left: 5rem;
+      background-color: unquote('hsl(var(--color-accent))');
+      border: none;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow-primary);
+      color: currentColor;
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-family: inherit;
+
+      &::placeholder {
+        color: currentColor;
+        font-size: 1.4rem;
+        font-weight: 300;
+        font-family: inherit;
+      }
+
+      &:focus-visible {
+        outline: 1px solid unquote('hsl(var(--color-text)/0.1)');
+      }
+    }
+  }
+
+  .selectForm {
+    .select {
+      padding: 1rem;
+      background-color: unquote('hsl(var(--color-accent))');
+      border: none;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow-primary);
+      color: currentColor;
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-family: inherit;
+      cursor: pointer;
+
+      &:focus {
+        outline: 1px solid unquote('hsl(var(--color-text)/0.1)');
+      }
+    }
+  }
+}
+
+:root [data-theme='light'] .searchInput,
+:root [data-theme='light'] .searchInput::placeholder {
+  color: var(--color-input);
+}

@@ -1,0 +1,7 @@
+$bp-tablet: 533px;
+
+@mixin bp-tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}

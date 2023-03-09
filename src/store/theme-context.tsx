@@ -23,6 +23,7 @@ export const ThemeContextProvider: FC<IThemeContextProvider> = ({ children }) =>
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark') setTheme('dark');
     else setTheme('light');
+    document.querySelector('body')?.setAttribute('data-theme', storedTheme || theme);
   }, []);
 
   useEffect(() => {
