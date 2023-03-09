@@ -5,7 +5,7 @@ import styles from 'components/DetailCard/DetailCard.module.scss';
 interface DetailCardProps {
   name: string;
   svg: string;
-  demonym: string;
+  alt: string;
   population: number;
   region: string;
   capital?: string;
@@ -14,14 +14,14 @@ interface DetailCardProps {
 export const DetailCard: FC<DetailCardProps> = ({
   name,
   svg,
-  demonym,
+  alt,
   population,
   region,
   capital
 }) => {
   return (
     <CardWrapper>
-      <img className={styles.flag} src={svg} alt={`${demonym} flag`} />
+      <img className={styles.flag} src={svg} alt={alt} />
       <h2 className={styles.name}>{name}</h2>
       <div>
         <p className={styles.detailGroup}>
