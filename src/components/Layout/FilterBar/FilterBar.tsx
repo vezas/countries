@@ -5,7 +5,7 @@ import { ReactComponent as SearchIcon } from 'assets/search-outline.svg';
 import styles from 'components/Layout/FilterBar/FilterBar.module.scss';
 
 export const FilterBar: FC = () => {
-  const { searchCountry } = useContext(DataContext);
+  const { searchCountry, searchCountryByRegion } = useContext(DataContext);
 
   return (
     <>
@@ -22,8 +22,8 @@ export const FilterBar: FC = () => {
           />
         </div>
         <form className={styles.selectForm}>
-          <select className={styles.select}>
-            <option>Filter by Region</option>
+          <select className={styles.select} onChange={searchCountryByRegion}>
+            <option value=''>Filter by Region</option>
             {regionList.map(({ name, value }) => (
               <option value={value} key={name}>
                 {name}

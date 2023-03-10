@@ -1,22 +1,26 @@
 export const regionList = [
   {
     name: 'Africa',
-    value: 'africa'
+    value: 'Africa'
   },
   {
     name: 'America',
-    value: 'america'
+    value: 'Americas'
   },
   {
     name: 'Asia',
-    value: 'asia'
+    value: 'Asia'
   },
   {
     name: 'Europe',
-    value: 'europe'
+    value: 'Europe'
   },
   {
     name: 'Oceania',
-    value: 'oceania'
+    value: 'Oceania'
+  },
+  {
+    name: 'Polar',
+    value: 'Antarctic'
   }
 ];
