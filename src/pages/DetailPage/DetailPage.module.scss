@@ -1,13 +1,7 @@
-.card {
-  transition: transform 300ms;
-  &:hover {
-    transform: scale(1.02);
-  }
-
-  .link {
-    text-decoration: none;
-    color: inherit;
-  }
+.detailPage {
+  display: grid;
+  padding-inline: var(--page-padding);
+  gap: var(--page-elements-gap);
 
   .flag {
     width: 100%;
@@ -19,14 +13,12 @@
   }
 
   .name {
-    padding-inline: var(--card-padding);
     font-size: 1.8rem;
     font-weight: 800;
   }
 
   .detailGroup {
-    padding-inline: var(--card-padding);
-    font-size: 1.5rem;
+    font-size: var(--fs-primary);
 
     .detailHeader {
       font-weight: 600;

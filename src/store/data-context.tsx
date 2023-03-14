@@ -27,10 +27,10 @@ interface IDataContext {
 
 export const DataContext = createContext<IDataContext>({
   data: [],
-  searchCountry: (e: ChangeEvent<HTMLInputElement>) => {
+  searchCountry: (e) => {
     return;
   },
-  searchCountryByRegion: (e: ChangeEvent<HTMLSelectElement>) => {
+  searchCountryByRegion: (e) => {
     return;
   },
   filteredData: []
@@ -47,6 +47,7 @@ interface CountriesData {
   population: number;
   region: string;
   capital: string;
+  cioc: string;
 }
 
 interface ApiResponse {
@@ -55,6 +56,7 @@ interface ApiResponse {
   population: number;
   region: string;
   capital: string;
+  cioc: string;
 }
 
 export const DataContextProvider: FC<IDataContextProvider> = ({ children }) => {
@@ -78,20 +80,21 @@ export const DataContextProvider: FC<IDataContextProvider> = ({ children }) => {
 
   const searchCountryByRegion = (e: ChangeEvent<HTMLSelectElement>) => {
     setQuery(e.target.value);
-    e.target.value = '';
+    e.target.value = 'default';
   };
 
   const fetchCountries: () => Promise<void> = async () => {
     const data: ApiResponse[] = await countriesApi.get('/all');
     const fetchedCountries = data.map(
-      ({ name: { common }, flags: { svg }, flags: { alt }, population, region, capital }) => {
+      ({ name: { common }, flags: { svg }, flags: { alt }, population, region, capital, cioc }) => {
         return {
           name: common,
           svg,
           alt,
           population,
           region,
-          capital
+          capital,
+          cioc
         };
       }
     );

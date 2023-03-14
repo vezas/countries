@@ -1,4 +1,5 @@
 import { FC, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ThemeContext } from 'store/theme-context';
 import { ReactComponent as SunIcon } from 'assets/sunny-outline.svg';
 import { ReactComponent as MoonIcon } from 'assets/moon-outline.svg';
@@ -9,7 +10,9 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.heading}>Where in the world?</h1>
+      <Link to='/' className={styles.link}>
+        <h1 className={styles.heading}>Where in the world?</h1>
+      </Link>
       <button className={styles.toggleThemeBtn} onClick={toggleTheme}>
         {theme === 'dark' ? (
           <SunIcon className={styles.toggleIcon} />

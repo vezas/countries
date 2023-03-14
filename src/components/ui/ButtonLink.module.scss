@@ -1,0 +1,10 @@
+.buttonLink {
+  width: max-content;
+  height: min-content;
+  padding: 0.5em 1em 0.5em 1em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: var(--fs-primary);
+  background-color: unquote('hsl(var(--color-accent))');
+}

@@ -2,6 +2,7 @@
 
 :root {
   --ff-main: 'Nunito Sans';
+  --fs-primary: 1.5rem;
 
   --border-radius: 5px;
 
@@ -19,7 +20,6 @@
   --color-background: 207 26% 17%;
   --color-text: 0 0% 100%;
   --color-accent: 209 23% 22%;
-  transition: all 100ms;
 }
 
 :root [data-theme='light'] {
@@ -27,7 +27,6 @@
   --color-text: 200 15% 8%;
   --color-accent: 0 0% 100%;
   --color-input: 0 0% 52%;
-  transition: all 100ms;
 }
 
 *,
@@ -49,6 +48,13 @@ body {
   background-color: unquote('hsl(var(--color-background))');
   color: unquote('hsl(var(--color-text))');
   min-height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #root {

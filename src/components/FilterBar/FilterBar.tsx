@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 import { DataContext } from 'store/data-context';
 import { regionList } from 'data/region-list';
 import { ReactComponent as SearchIcon } from 'assets/search-outline.svg';
-import styles from 'components/Layout/FilterBar/FilterBar.module.scss';
+import styles from 'components/FilterBar/FilterBar.module.scss';
 
 export const FilterBar: FC = () => {
   const { searchCountry, searchCountryByRegion } = useContext(DataContext);
@@ -23,7 +23,8 @@ export const FilterBar: FC = () => {
         </div>
         <form className={styles.selectForm}>
           <select className={styles.select} onChange={searchCountryByRegion}>
-            <option value=''>Filter by Region</option>
+            <option value='default'>Filter by Region</option>
+            <option value=''>All</option>
             {regionList.map(({ name, value }) => (
               <option value={value} key={name}>
                 {name}

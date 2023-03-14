@@ -5,6 +5,11 @@
   align-items: center;
   background-color: unquote('hsl(var(--color-accent))');
 
+  .link {
+    color: inherit;
+    text-decoration: none;
+  }
+
   .heading {
     font-size: 2rem;
   }
