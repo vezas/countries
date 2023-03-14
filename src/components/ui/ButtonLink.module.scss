@@ -1,10 +1,25 @@
 .buttonLink {
   width: max-content;
   height: min-content;
-  padding: 0.5em 1em 0.5em 1em;
+  padding: 0.5em 2em 0.5em 2em;
   letter-spacing: 0.1em;
   text-decoration: none;
   color: var(--color-text);
-  font-size: var(--fs-primary);
+  font-size: 1.2rem;
   background-color: unquote('hsl(var(--color-accent))');
+  box-shadow: var(--box-shadow-primary);
+
+  &:hover {
+    box-shadow: 0 0.5rem 1rem unquote('hsl(var(--color-text)/0.1)');
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: 0 0.3rem 1rem unquote('hsl(var(--color-text)/0.1)');
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 1px solid unquote('hsl(var(--color-text)/0.1)');
+  }
 }

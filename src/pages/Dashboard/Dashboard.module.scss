@@ -1,7 +1,13 @@
 .content {
   padding-inline: var(--page-padding);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 30rem));
+  grid-auto-rows: min-content 1fr;
   gap: var(--page-elements-gap);
-  justify-content: center;
+
+  .cardsGroup {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 25rem));
+    justify-content: center;
+    gap: var(--page-elements-gap);
+  }
 }

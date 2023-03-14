@@ -1,31 +1,93 @@
+@import 'scss/_mixins.scss';
+
 .detailPage {
   display: grid;
+  grid-template-columns: 1fr;
   padding-inline: var(--page-padding);
   gap: var(--page-elements-gap);
 
+  @include bp-medium {
+    grid-auto-columns: 1fr;
+    grid-auto-rows: min-content;
+    grid-template-areas:
+      'back-btn back-btn'
+      'flag name'
+      'flag primary-details'
+      'flag secondary-details'
+      'flag borders';
+    column-gap: (var(--page-elements-gap));
+    row-gap: 1rem;
+    align-items: center;
+    align-content: center;
+  }
+
+  .backBtn {
+    @include bp-medium {
+      grid-area: back-btn;
+    }
+  }
+
   .flag {
     width: 100%;
-    height: 20rem;
-    object-fit: cover;
-    object-position: center;
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    height: 25rem;
+    object-fit: contain;
+
+    @include bp-medium {
+      grid-area: flag;
+    }
   }
 
   .name {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
+
+    @include bp-medium {
+      grid-area: name;
+    }
+  }
+
+  .primaryDetails {
+    @include bp-medium {
+      grid-area: primary-details;
+    }
+  }
+
+  .secondaryDetails {
+    @include bp-medium {
+      grid-area: secondary-details;
+    }
   }
 
   .detailGroup {
-    font-size: var(--fs-primary);
+    font-size: 1.3rem;
 
     .detailHeader {
       font-weight: 600;
     }
 
     .detailInfo {
-      font-weight: 300;
+      font-weight: 100;
+    }
+  }
+
+  .bordersGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-elements-gap);
+
+    @include bp-medium {
+      grid-area: borders;
+    }
+
+    .bordersHeader {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .bordersContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--card-elements-gap);
     }
   }
 }

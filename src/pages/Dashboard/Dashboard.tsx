@@ -8,20 +8,22 @@ export const Dashboard: FC = () => {
   const { filteredData } = useContext(DataContext);
   return (
     <>
-      <FilterBar />
       <main className={styles.content}>
-        {filteredData.map(({ name, svg, alt, population, region, capital, cioc }) => (
-          <DetailCard
-            key={name}
-            cioc={cioc}
-            name={name}
-            svg={svg}
-            alt={alt}
-            population={population}
-            region={region}
-            capital={capital}
-          />
-        ))}
+        <FilterBar />
+        <div className={styles.cardsGroup}>
+          {filteredData.map(({ name, svg, alt, population, region, capital, cioc }) => (
+            <DetailCard
+              key={name}
+              cioc={cioc}
+              name={name}
+              svg={svg}
+              alt={alt}
+              population={population}
+              region={region}
+              capital={capital}
+            />
+          ))}
+        </div>
       </main>
     </>
   );

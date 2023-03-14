@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: var(--page-elements-gap);
 
-  @include bp-tablet {
+  @include bp-small {
     flex-direction: row;
     justify-content: space-between;
   }

@@ -1,7 +1,14 @@
-$bp-tablet: 533px;
+$bp-small: 533px;
+$bp-medium: 533px;
 
-@mixin bp-tablet {
-  @media (min-width: $bp-tablet) {
+@mixin bp-small {
+  @media (min-width: $bp-small) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media (min-width: $bp-medium) {
     @content;
   }
 }
