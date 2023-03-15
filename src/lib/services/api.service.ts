@@ -11,6 +11,7 @@ const createAxiosInstance = (baseURL: string) => {
         position: 'bottom-right',
         theme: 'colored'
       });
+
       return Promise.reject(error);
     }
   );

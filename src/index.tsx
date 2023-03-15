@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Dashboard, dashboardLoader, DetailPage, detailPageLoader } from 'pages';
-import { ThemeContextProvider } from 'lib/store';
+import { ThemeContextProvider } from 'lib/stores';
 import { Layout } from 'lib/components';
 import 'index.scss';
 

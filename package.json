@@ -1,5 +1,6 @@
 {
-  "name": "react-app-starter",
+  "name": "countries",
+  "homepage": "https://vezas.github.io/countries",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +8,8 @@
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "format": "prettier --write ./src/**/* --config ./.prettierrc",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -30,6 +33,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.3"
   },
   "browserslist": {
