@@ -78,6 +78,4 @@ export const DetailPage: FC = () => {
   );
 };
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
-  return countriesApi.get(`/alpha/${params.name}`);
-};
+export const loader = ({ params }: LoaderFunctionArgs) => countriesApi.get(`/alpha/${params.name}`);

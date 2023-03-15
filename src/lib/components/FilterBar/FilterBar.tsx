@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction, ChangeEvent } from 'react';
 import { ReactComponent as SearchIcon } from 'assets/search-outline.svg';
-import { regionList } from 'lib/data';
+import { regionList } from './data';
 import styles from './FilterBar.module.scss';
 
 interface FilterBarProps {

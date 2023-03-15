@@ -61,6 +61,4 @@ export const Dashboard: FC = () => {
   );
 };
 
-export const loader = async () => {
-  return await countriesApi.get('/all');
-};
+export const loader = () => countriesApi.get('/all');
