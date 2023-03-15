@@ -17,12 +17,12 @@ export const ThemeContext = createContext<IThemeContext>({
 });
 
 export const ThemeContextProvider: FC<IThemeContextProvider> = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark') setTheme('dark');
-    else setTheme('light');
+    if (storedTheme === 'light') setTheme('light');
     document.querySelector('body')?.setAttribute('data-theme', storedTheme || theme);
   }, []);
 

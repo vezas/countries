@@ -2,7 +2,7 @@
   "name": "countries",
   "homepage": "https://vezas.github.io/countries",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "react-scripts start",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
