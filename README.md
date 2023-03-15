@@ -3,6 +3,7 @@
 #### Links
 - Live version: https://vezas.github.io/countries
 - Design: https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
+- API: https://restcountries.com/
 
 #### Built with
 - `React.js`
