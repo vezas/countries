@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { CardWrapper } from 'components/ui/CardWrapper';
+import { DetailTextGroup } from 'components/Typography';
 import styles from 'components/DetailCard/DetailCard.module.scss';
 
 interface DetailCardProps {
@@ -27,19 +28,10 @@ export const DetailCard: FC<DetailCardProps> = ({
       <Link className={styles.link} to={`country/${cca2}`}>
         <img className={styles.flag} src={svg} alt={alt} />
         <h2 className={styles.name}>{name}</h2>
-        <div>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Population: </span>
-            <span className={styles.detailInfo}>{population.toLocaleString('en-US')}</span>
-          </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Region: </span>
-            <span className={styles.detailInfo}>{region}</span>
-          </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Capital: </span>
-            <span className={styles.detailInfo}>{capital || 'none'}</span>
-          </p>
+        <div className={styles.detailsGroup}>
+          <DetailTextGroup title='Population' detailData={population.toLocaleString('en-US')} />
+          <DetailTextGroup title='Region' detailData={region} />
+          <DetailTextGroup title='Capital' detailData={capital} />
         </div>
       </Link>
     </CardWrapper>

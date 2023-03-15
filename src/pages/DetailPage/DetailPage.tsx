@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
 import { countriesApi } from 'services/api.service';
 import { ButtonLink } from 'components/ui/ButtonLink';
+import { DetailTextGroup } from 'components/Typography';
 import styles from 'pages/DetailPage/DetailPage.module.scss';
 
 interface IData {
@@ -44,50 +45,20 @@ export const DetailPage: FC = () => {
         </ButtonLink>
         <img className={styles.flag} src={svg} alt={alt || name + 'flag'} />
         <h2 className={styles.name}>{name}</h2>
+
         <div className={styles.primaryDetails}>
-          {officialName && (
-            <p className={styles.detailGroup}>
-              <span className={styles.detailHeader}>Native Name: </span>
-              <span className={styles.detailInfo}>{officialName}</span>
-            </p>
-          )}
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Population: </span>
-            <span className={styles.detailInfo}>{population.toLocaleString('en-US')}</span>
-          </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Region: </span>
-            <span className={styles.detailInfo}>{region}</span>
-          </p>
-          {subregion && (
-            <p className={styles.detailGroup}>
-              <span className={styles.detailHeader}>Sub Region: </span>
-              <span className={styles.detailInfo}>{subregion}</span>
-            </p>
-          )}
-          {capital && (
-            <p className={styles.detailGroup}>
-              <span className={styles.detailHeader}>Capital: </span>
-              <span className={styles.detailInfo}>{capital}</span>
-            </p>
-          )}
+          {officialName && <DetailTextGroup title='Native Name' detailData={officialName} />}
+          <DetailTextGroup title='Population' detailData={population.toLocaleString('en-US')} />
+          <DetailTextGroup title='Region' detailData={region} />
+          {subregion && <DetailTextGroup title='Sub Region' detailData={subregion} />}
+          {capital && <DetailTextGroup title='Capital' detailData={capital} />}
         </div>
+
         <div className={styles.secondaryDetails}>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Top Level Domain: </span>
-            <span className={styles.detailInfo}>{tld}</span>
-          </p>
-          {currencyName && (
-            <p className={styles.detailGroup}>
-              <span className={styles.detailHeader}>Currencies: </span>
-              <span className={styles.detailInfo}>{currencyName}</span>
-            </p>
-          )}
+          <DetailTextGroup title='Top Level Domain' detailData={tld} />
+          {currencyName && <DetailTextGroup title='Currencies' detailData={currencyName} />}
           {languages && (
-            <p className={styles.detailGroup}>
-              <span className={styles.detailHeader}>Languages: </span>
-              <span className={styles.detailInfo}>{Object.values(languages).join(', ')}</span>
-            </p>
+            <DetailTextGroup title='Languages' detailData={Object.values(languages).join(', ')} />
           )}
         </div>
 
