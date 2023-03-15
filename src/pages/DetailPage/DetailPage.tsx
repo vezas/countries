@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
-import { countriesApi } from 'services/api.service';
-import { ButtonLink } from 'components/ui/ButtonLink';
-import { DetailTextGroup } from 'components/Typography';
+import { countriesApi } from 'lib/services/api.service';
+import { ButtonLink } from 'lib/components/ui/ButtonLink';
+import { DetailTextGroup } from 'lib/components/Typography';
 import styles from 'pages/DetailPage/DetailPage.module.scss';
 
 interface IData {

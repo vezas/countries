@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
-import { DetailCard } from 'components/DetailCard/DetailCard';
-import { FilterBar } from 'components/FilterBar';
-import { countriesApi } from 'services/api.service';
+import { DetailCard } from 'lib/components/DetailCard/DetailCard';
+import { FilterBar } from 'lib/components/FilterBar';
+import { countriesApi } from 'lib/services/api.service';
 import { useLoaderData } from 'react-router-dom';
 import styles from 'pages/Dashboard/Dashboard.module.scss';
 

@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, ChangeEvent } from 'react';
-import { regionList } from 'data/region-list';
+import { regionList } from 'lib/data';
 import { ReactComponent as SearchIcon } from 'assets/search-outline.svg';
-import styles from 'components/FilterBar/FilterBar.module.scss';
+import styles from 'lib/components/FilterBar/FilterBar.module.scss';
 
 interface FilterBarProps {
   setQuery: Dispatch<SetStateAction<string>>;
