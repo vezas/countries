@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeContextProvider } from 'store/theme-context';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ThemeContextProvider } from 'store/theme-context';
 import { Dashboard, loader as dashboardLoader } from 'pages/Dashboard';
 import { DetailPage, loader as detailPageLoader } from 'pages/DetailPage';
 import { Layout } from 'components/Layout';
 import 'index.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const routes = [
   {
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: routes.map(({ path, element, loader }) => {
-      return { path, element, loader };
+      return { path, element, loader, errorElement: <ToastContainer /> };
     })
   }
 ]);

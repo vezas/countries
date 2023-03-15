@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const createAxiosInstance = (baseURL: string) => {
   const instance = axios.create({ baseURL });
@@ -6,6 +7,10 @@ const createAxiosInstance = (baseURL: string) => {
   instance.interceptors.response.use(
     (response) => response.data,
     (error) => {
+      toast.error(error.message, {
+        position: 'bottom-right',
+        theme: 'colored'
+      });
       return Promise.reject(error);
     }
   );
