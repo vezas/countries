@@ -7,7 +7,7 @@ const createAxiosInstance = (baseURL: string) => {
   instance.interceptors.response.use(
     (response) => response.data,
     (error) => {
-      toast.error(error.message, {
+      toast.error(`${error.message}, Try again later`, {
         position: 'bottom-right',
         theme: 'colored'
       });

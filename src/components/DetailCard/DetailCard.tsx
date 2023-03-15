@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { CardWrapper } from 'components/CardWrapper';
+import { CardWrapper } from 'components/ui/CardWrapper';
 import styles from 'components/DetailCard/DetailCard.module.scss';
 
 interface DetailCardProps {

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
 import { countriesApi } from 'services/api.service';
-import { ButtonLink } from 'components/ui';
+import { ButtonLink } from 'components/ui/ButtonLink';
 import styles from 'pages/DetailPage/DetailPage.module.scss';
 
 interface IData {

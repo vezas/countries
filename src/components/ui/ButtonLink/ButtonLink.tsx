@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
-import styles from 'components/ui/ButtonLink.module.scss';
+import styles from 'components/ui/ButtonLink/ButtonLink.module.scss';
 
 interface ButtonLinkProps {
   to: string;
