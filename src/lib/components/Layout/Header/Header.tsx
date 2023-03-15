@@ -1,9 +1,9 @@
 import { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from 'lib/store/theme-context';
 import { ReactComponent as SunIcon } from 'assets/sunny-outline.svg';
 import { ReactComponent as MoonIcon } from 'assets/moon-outline.svg';
-import styles from 'lib/components/Layout/Header/Header.module.scss';
+import { ThemeContext } from 'lib/store';
+import styles from './Header.module.scss';
 
 export const Header: FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

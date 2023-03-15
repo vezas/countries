@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Dashboard, dashboardLoader, DetailPage, detailPageLoader } from 'pages';
 import { ThemeContextProvider } from 'lib/store';
 import { Layout } from 'lib/components';
-import 'react-toastify/dist/ReactToastify.css';
 import 'index.scss';
 
 const routes = [
@@ -25,9 +25,12 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    children: routes.map(({ path, element, loader }) => {
-      return { path, element, loader, errorElement: <ToastContainer /> };
-    })
+    children: routes.map(({ path, element, loader }) => ({
+      path,
+      element,
+      loader,
+      errorElement: <ToastContainer />
+    }))
   }
 ]);
 

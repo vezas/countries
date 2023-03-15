@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { CardWrapper } from 'lib/components/ui/CardWrapper';
-import { DetailTextGroup } from 'lib/components/Typography';
-import styles from 'lib/components/DetailCard/DetailCard.module.scss';
+import { CardWrapper, DetailTextGroup } from 'lib/components';
+import styles from './DetailCard.module.scss';
 
 interface DetailCardProps {
   name: string;

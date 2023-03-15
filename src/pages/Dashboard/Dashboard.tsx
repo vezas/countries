@@ -1,9 +1,8 @@
 import { FC, useState } from 'react';
-import { DetailCard } from 'lib/components/DetailCard/DetailCard';
-import { FilterBar } from 'lib/components/FilterBar';
-import { countriesApi } from 'lib/services/api.service';
 import { useLoaderData } from 'react-router-dom';
-import styles from 'pages/Dashboard/Dashboard.module.scss';
+import { DetailCard, FilterBar } from 'lib/components';
+import { countriesApi } from 'lib/services';
+import styles from './Dashboard.module.scss';
 
 interface IData {
   name: { common: string };

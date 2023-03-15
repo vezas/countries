@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
-import { countriesApi } from 'lib/services/api.service';
-import { ButtonLink } from 'lib/components/ui/ButtonLink';
-import { DetailTextGroup } from 'lib/components/Typography';
-import styles from 'pages/DetailPage/DetailPage.module.scss';
+import { ButtonLink, DetailTextGroup } from 'lib/components';
+import { countriesApi } from 'lib/services';
+import styles from './DetailPage.module.scss';
 
 interface IData {
   name: { common: string; nativeName?: { [key: string]: { official: string } } };

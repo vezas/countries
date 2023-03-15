@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import clsx from 'clsx';
-import styles from 'lib/components/ui/CardWrapper/CardWrapper.module.scss';
+import styles from './CardWrapper.module.scss';
 
 interface CardWrapperProps {
   children: ReactNode;
