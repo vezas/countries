@@ -10,7 +10,7 @@ interface DetailCardProps {
   population: number;
   region: string;
   capital?: string;
-  cioc: string;
+  cca2: string;
 }
 
 export const DetailCard: FC<DetailCardProps> = ({
@@ -20,11 +20,11 @@ export const DetailCard: FC<DetailCardProps> = ({
   population,
   region,
   capital,
-  cioc
+  cca2
 }) => {
   return (
     <CardWrapper className={styles.card}>
-      <Link className={styles.link} to={`country/${cioc}`}>
+      <Link className={styles.link} to={`country/${cca2}`}>
         <img className={styles.flag} src={svg} alt={alt} />
         <h2 className={styles.name}>{name}</h2>
         <div>

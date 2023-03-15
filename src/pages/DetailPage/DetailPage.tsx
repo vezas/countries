@@ -5,16 +5,16 @@ import { ButtonLink } from 'components/ui';
 import styles from 'pages/DetailPage/DetailPage.module.scss';
 
 interface IData {
-  name: { common: string; nativeName: { [key: string]: { official: string } } };
-  flags: { svg: string; alt: string };
+  name: { common: string; nativeName?: { [key: string]: { official: string } } };
+  flags: { svg: string; alt?: string };
   population: number;
   region: string;
-  subregion: string;
-  capital: string;
+  subregion?: string;
+  capital?: string;
   tld: string;
-  currencies: { [key: string]: { name: string } };
-  languages: string[];
-  borders?: string[];
+  currencies: { [key: string]: { name: string } } | null;
+  languages?: string[];
+  borders: string[];
 }
 
 export const DetailPage: FC = () => {
@@ -33,8 +33,8 @@ export const DetailPage: FC = () => {
     borders
   } = data[0];
 
-  const { official: officialName } = nativeName[Object.keys(nativeName)[0]];
-  const { name: currencyName } = currencies[Object.keys(currencies)[0]];
+  const officialName = nativeName && nativeName[Object.keys(nativeName)[0]].official;
+  const currencyName = currencies && currencies[Object.keys(currencies)[0]].name;
 
   return (
     <>
@@ -42,13 +42,15 @@ export const DetailPage: FC = () => {
         <ButtonLink className={styles.backBtn} to='/'>
           &larr; Back
         </ButtonLink>
-        <img className={styles.flag} src={svg} alt={alt} />
+        <img className={styles.flag} src={svg} alt={alt || name + 'flag'} />
         <h2 className={styles.name}>{name}</h2>
         <div className={styles.primaryDetails}>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Native Name: </span>
-            <span className={styles.detailInfo}>{officialName}</span>
-          </p>
+          {officialName && (
+            <p className={styles.detailGroup}>
+              <span className={styles.detailHeader}>Native Name: </span>
+              <span className={styles.detailInfo}>{officialName}</span>
+            </p>
+          )}
           <p className={styles.detailGroup}>
             <span className={styles.detailHeader}>Population: </span>
             <span className={styles.detailInfo}>{population.toLocaleString('en-US')}</span>
@@ -57,28 +59,36 @@ export const DetailPage: FC = () => {
             <span className={styles.detailHeader}>Region: </span>
             <span className={styles.detailInfo}>{region}</span>
           </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Sub Region: </span>
-            <span className={styles.detailInfo}>{subregion}</span>
-          </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Capital: </span>
-            <span className={styles.detailInfo}>{capital}</span>
-          </p>
+          {subregion && (
+            <p className={styles.detailGroup}>
+              <span className={styles.detailHeader}>Sub Region: </span>
+              <span className={styles.detailInfo}>{subregion}</span>
+            </p>
+          )}
+          {capital && (
+            <p className={styles.detailGroup}>
+              <span className={styles.detailHeader}>Capital: </span>
+              <span className={styles.detailInfo}>{capital}</span>
+            </p>
+          )}
         </div>
         <div className={styles.secondaryDetails}>
           <p className={styles.detailGroup}>
             <span className={styles.detailHeader}>Top Level Domain: </span>
             <span className={styles.detailInfo}>{tld}</span>
           </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Currencies: </span>
-            <span className={styles.detailInfo}>{currencyName}</span>
-          </p>
-          <p className={styles.detailGroup}>
-            <span className={styles.detailHeader}>Languages: </span>
-            <span className={styles.detailInfo}>{Object.values(languages).join(', ')}</span>
-          </p>
+          {currencyName && (
+            <p className={styles.detailGroup}>
+              <span className={styles.detailHeader}>Currencies: </span>
+              <span className={styles.detailInfo}>{currencyName}</span>
+            </p>
+          )}
+          {languages && (
+            <p className={styles.detailGroup}>
+              <span className={styles.detailHeader}>Languages: </span>
+              <span className={styles.detailInfo}>{Object.values(languages).join(', ')}</span>
+            </p>
+          )}
         </div>
 
         {borders && (
@@ -99,5 +109,5 @@ export const DetailPage: FC = () => {
 };
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  return await countriesApi.get(`/alpha/${params.name}`);
+  return countriesApi.get(`/alpha/${params.name}`);
 };

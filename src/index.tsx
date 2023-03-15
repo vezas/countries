@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ThemeContextProvider } from 'store/theme-context';
-import { DataContextProvider } from 'store/data-context';
-import { Dashboard } from 'pages/Dashboard';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Dashboard, loader as dashboardLoader } from 'pages/Dashboard';
 import { DetailPage, loader as detailPageLoader } from 'pages/DetailPage';
 import { Layout } from 'components/Layout';
 import 'index.scss';
@@ -11,7 +10,8 @@ import 'index.scss';
 const routes = [
   {
     path: '/',
-    element: <Dashboard />
+    element: <Dashboard />,
+    loader: dashboardLoader
   },
   {
     path: '/country/:name',
@@ -33,10 +33,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <ThemeContextProvider>
-    <DataContextProvider>
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
-    </DataContextProvider>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   </ThemeContextProvider>
 );
