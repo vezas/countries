@@ -1,27 +1,31 @@
 # REST Countries API with color theme switcher
 
-#### Links
+## Links
+
 - Live version: https://vezas.github.io/countries
 - Design: https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
 - API: https://restcountries.com/
 
-#### Built with
-- `React.js`
-- `HTML5`
+## Built with
+
+- `ReactJS`
+- `react-router-dom`
+- `Typescript`
+- `HTML`
 - `SCSS`
 - `CSS Modules`
-- `Typescript`
-- `react-router-dom`
 - `axios`
-- `react-toastify`
-- `clsx`
 
-#### How to start
+## How to start
+
 Install dependencies:
+
 ```bash
-    yarn
+$ yarn
 ```
+
 and run the app with:
+
 ```bash
-    yarn start
+$ yarn start
 ```
