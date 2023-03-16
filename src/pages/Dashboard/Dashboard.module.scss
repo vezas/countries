@@ -1,5 +1,5 @@
 .content {
-  padding-inline: calc(var(--page-padding * 0.5));
+  padding-inline: var(--page-padding-05);
   display: grid;
   grid-auto-rows: min-content 1fr;
   gap: var(--page-elements-gap);
